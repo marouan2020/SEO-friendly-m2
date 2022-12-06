@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="seo_filter_urls" resource="default" engine="innodb" comment="Seo filter url table">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="text" name="request_filter" nullable="false" comment="Requested filter"/>
+        <column xsi:type="text" name="target_path" nullable="false" comment="Target path"/>
+        <column xsi:type="text" name="request_path" nullable="true" comment="Request path"/>
+        <column xsi:type="int" name="category_id" unsigned="true" nullable="true" identity="false" comment="Category id"/>
+        <column xsi:type="int" name="created_time" unsigned="true" nullable="true" identity="false" comment="Created time"/>
+        <column xsi:type="int" name="updated_time" unsigned="true" nullable="true" identity="false" comment="Updated time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="URL_CREATED_AT" indexType="btree">
+            <column name="created_time"/>
+        </index>
+        <index referenceId="URL_UPDATED_AT" indexType="btree">
+            <column name="updated_time"/>
+        </index>
+    </table>
+</schema>

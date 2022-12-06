@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Magento\Catalog\Model\Layer\Filter\Item" type="Magtunisia\Seofilterurl\Rewrite\Magento\Catalog\Layer\Filter\Item"/>
+	<preference for="Magento\UrlRewrite\Controller\Router" type="Magtunisia\Seofilterurl\Controller\Router" />
+	<type name="Magento\LayeredNavigation\Block\Navigation\State">
+		<plugin name="Magtunisia_Seofilterurl::clearAllUrl" type="Magtunisia\Seofilterurl\Plugin\Block\LayeredNavigation\Navigation\StateClearAllUrl"/>
+	</type>
+</config>

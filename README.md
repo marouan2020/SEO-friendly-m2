@@ -51,3 +51,4 @@ Enable Search Engine friendly Filter URL: Enable or disable the URL overwrites.
 	- magetun_seofilterurl_cleanerseofilterurl
 
 
+
