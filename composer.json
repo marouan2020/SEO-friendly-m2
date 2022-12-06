@@ -1,28 +1,28 @@
 {
-    "name": "magtunisia/module-seo-filter-url",
-    "description": "Seofilterurl is a module for Magento 2 to make the URLs from the layered filter navigation human readable and SEO-friendly.",
-    "type": "magento2-module",
-    "version": "1.0.0",
-    "license": "GPL-3.0",
-    "authors": [
-        {
-            "name": "Ben Mansour Marouan",
-            "email": "marouan.ben.mansour@gmail.com",
-            "homepage": "https://marouan-ben-mansour.com/",
-            "role": "Developer"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "php": "~7.4.0||~8.1.0",
-        "magento/framework": "103.0.*"
-    },
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Magtunisia\\Seofilterurl\\": ""
-        }
+  "name": "magtunisia/module-seo-filter-url",
+  "description": "Seofilterurl is a module for Magento 2 to make the URLs from the layered filter navigation human readable and SEO-friendly.",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Ben Mansour Marouan",
+      "email": "marouan.ben.mansour@gmail.com",
+      "homepage": "https://marouan-ben-mansour.com/",
+      "role": "Developer"
     }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "~7.4.0||~8.1.0",
+    "magento/framework": "103.0.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magtunisia\\Seofilterurl\\": ""
+    }
+  }
 }

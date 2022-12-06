@@ -12,21 +12,18 @@ use Magtunisia\Seofilterurl\Helper\Data;
 use Psr\Log\LoggerInterface;
 
 /**
-	* Class CleanerLmdcSeofilterurl
-	*/
+ * Class CleanerLmdcSeofilterurl
+ */
 class CleanerLmdcSeofilterurl
 {
-
   /**
    * @var LoggerInterface $_logger
    */
   protected $_logger;
-
   /**
    * @var FilterModifierInterface $_filterModifier
    */
   protected $_filterModifier;
-
   /**
    * @var Data $_lmdcHelper
    */
@@ -40,9 +37,9 @@ class CleanerLmdcSeofilterurl
    * @param LoggerInterface $logger
    */
   public function __construct(
-    Data $lmdc_helper,
-    FilterModifierInterface $filter_modifier_interface,
-    LoggerInterface $logger
+   Data $lmdc_helper,
+   FilterModifierInterface $filter_modifier_interface,
+   LoggerInterface $logger
   )
   {
     $this->_lmdcHelper = $lmdc_helper;
@@ -64,11 +61,11 @@ class CleanerLmdcSeofilterurl
     $idsToBeDelete = [];
     foreach ($getAllLmdcUrls as $lmdcFilterData) {
       if (
-        !strpos($lmdcFilterData['request_path'], "/p/") ||
-        strpos($lmdcFilterData['request_path'], "?") ||
-        strpos($lmdcFilterData['request_filter'], "is_scroll") ||
-        strpos($lmdcFilterData['request_path'], "is-scroll") ||
-        !strpos($lmdcFilterData['request_filter'], "?")
+       !strpos($lmdcFilterData['request_path'], "/p/") ||
+       strpos($lmdcFilterData['request_path'], "?") ||
+       strpos($lmdcFilterData['request_filter'], "is_scroll") ||
+       strpos($lmdcFilterData['request_path'], "is-scroll") ||
+       !strpos($lmdcFilterData['request_filter'], "?")
       ) {
         $idsToBeDelete["lmdc"][] = $lmdcFilterData['entity_id'];
         $idsToBeDelete["rewrite"][] = $lmdcFilterData['request_path'];
@@ -77,8 +74,8 @@ class CleanerLmdcSeofilterurl
       $parserRequestFilter = parse_url($lmdcFilterData['request_filter']);
       $findParamInRequestFilter = parse_url($lmdcFilterData['request_filter']);
       if (
-        empty($findParamInRequestFilter['query']) && !strpos($lmdcFilterData['request_filter'], "/p/") ||
-        !empty($parserRequestFilter['query']) && !$this->checkQueryFilters($parserRequestFilter['query'])
+       empty($findParamInRequestFilter['query']) && !strpos($lmdcFilterData['request_filter'], "/p/") ||
+       !empty($parserRequestFilter['query']) && !$this->checkQueryFilters($parserRequestFilter['query'])
       ) {
         $idsToBeDelete["lmdc"][] = $lmdcFilterData['entity_id'];
         $requestPathToArray = explode("/", $lmdcFilterData['request_path']);
